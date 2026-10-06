@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Scoring System</title>
+    <link rel="stylesheet" href="/frontend/styles.css" />
+  </head>
+  <body>
+    <h1>AI Scoring System</h1>
+
+    <section id="login-section" class="card">
+      <h2>登入</h2>
+      <input id="username" placeholder="帳號" value="teacher1" />
+      <input id="password" placeholder="密碼" type="password" value="teacher123" />
+      <select id="role">
+        <option value="teacher">教師</option>
+        <option value="student">學生</option>
+      </select>
+      <button id="login-btn">登入</button>
+      <p id="login-msg"></p>
+    </section>
+
+    <section id="teacher-section" class="card hidden">
+      <h2>教師面板</h2>
+
+      <h3>設定 GPT API Key</h3>
+      <input id="api-key" placeholder="sk-..." />
+      <button id="save-key-btn">儲存 API Key</button>
+
+      <h3>新增題目</h3>
+      <input id="q-title" placeholder="題目名稱" />
+      <textarea id="q-desc" placeholder="題目描述"></textarea>
+      <select id="q-mode">
+        <option value="exam">考試</option>
+        <option value="practice">練習</option>
+      </select>
+      <button id="create-q-btn">新增題目</button>
+
+      <h3>學生進度 / 成績</h3>
+      <button id="refresh-dashboard-btn">重新整理</button>
+      <pre id="teacher-dashboard"></pre>
+    </section>
+
+    <section id="student-section" class="card hidden">
+      <h2>學生面板</h2>
+      <label>
+        模式
+        <select id="student-mode">
+          <option value="exam">考試</option>
+          <option value="practice">練習</option>
+        </select>
+      </label>
+      <button id="load-questions-btn">載入題目</button>
+      <select id="question-select"></select>
+      <textarea id="student-code" placeholder="貼上程式碼"></textarea>
+      <button id="submit-btn">送出</button>
+
+      <h3>我的進度/成績</h3>
+      <button id="refresh-me-btn">重新整理</button>
+      <pre id="student-records"></pre>
+    </section>
+
+    <script src="/frontend/app.js"></script>
+  </body>
+</html>
